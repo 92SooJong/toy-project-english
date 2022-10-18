@@ -12,9 +12,10 @@ import lombok.extern.slf4j.Slf4j;
 public class SentenceApiController {
 
 
-    @PostMapping("sentence/api/v1/")
+    @PostMapping("/sentence/api/v1")
     public void createSentence(@RequestBody SentenceCreateRequestDTO sentenceCreateRequestDTO){
         System.out.println(sentenceCreateRequestDTO.getEnglishSentence());
+        System.out.println(sentenceCreateRequestDTO.getKoreanSentence());
 
     }
 
