@@ -12,7 +12,6 @@ const sentenceInput = {
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function () {
-            // FIXME : 성공해도 팝업이 안뜸.
             alert('등록되었습니다.');
 
         }).fail(function (error) {
