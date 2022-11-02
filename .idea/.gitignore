@@ -6,3 +6,14 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+/checkstyle-idea.xml
+/compiler.xml
+/dataSources.xml
+/git_toolbox_prj.xml
+/gradle.xml
+/jarRepositories.xml
+/misc.xml
+/modules.xml
+/toy-project-english.iml
+/uiDesigner.xml
+/vcs.xml
