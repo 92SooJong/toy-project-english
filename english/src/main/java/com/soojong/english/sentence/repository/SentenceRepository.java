@@ -18,7 +18,7 @@ public class SentenceRepository {
 
         SentenceEntity entity = SentenceEntity.builder()
             .koreanSentence(sentenceRegistrationRequestVO.getKoreanSentence())
-            .englishSentece(sentenceRegistrationRequestVO.getEnglishSentence())
+            .englishSentence(sentenceRegistrationRequestVO.getEnglishSentence())
             .build();
 
         return sentenceJpaRepository.save(entity).getId();

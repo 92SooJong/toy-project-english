@@ -10,7 +10,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "sentence")
 @Getter
 @Builder
 @NoArgsConstructor
@@ -23,6 +23,7 @@ public class SentenceEntity {
 
     private String koreanSentence;
 
-    private String englishSentece;
+    private String englishSentence;
+
 
 }
