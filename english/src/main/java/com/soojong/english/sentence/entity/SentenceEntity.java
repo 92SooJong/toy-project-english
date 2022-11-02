@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.soojong.english.common.entity.BaseTimeAuditingEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SentenceEntity {
+public class SentenceEntity extends BaseTimeAuditingEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
