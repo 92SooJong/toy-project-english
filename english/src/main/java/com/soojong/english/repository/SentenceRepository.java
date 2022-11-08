@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.soojong.english.entity.SentenceEntity;
 import com.soojong.english.repository.jpa.SentenceJpaRepository;
 import com.soojong.english.vo.sentence.SentenceRegistrationRequestVO;
+import com.soojong.english.vo.sentence.SentenceVO;
 import lombok.RequiredArgsConstructor;
 
 @Repository
@@ -24,13 +25,22 @@ public class SentenceRepository {
         return sentenceJpaRepository.save(entity).getId();
     }
 
-    public SentenceEntity getRandomSentence() {
+    public SentenceVO getRandomSentence() {
 
-        List<SentenceEntity> sentenceEntity = sentenceJpaRepository.getSentenceEntityRandomOrder();
+        List<SentenceEntity> sentenceEntityList = sentenceJpaRepository.getSentenceEntityRandomOrder();
 
-        // TODO - VO 변환 코드 추가
+        // TODO - 데이터가 없는 경우 처리
+        SentenceEntity sentenceEntity = sentenceEntityList.get(0);
 
-        return sentenceEntity.get(0);
+        return SentenceVO.builder()
+            .id(sentenceEntity.getId())
+            .englishSentence(sentenceEntity.getEnglishSentence())
+            .koreanSentence(sentenceEntity.getKoreanSentence())
+            .build();
+
+
+
+
     }
 
 

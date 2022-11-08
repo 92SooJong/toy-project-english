@@ -1,4 +1,4 @@
-package com.soojong.english.dto.sentence;
+package com.soojong.english.controller.sentence.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
