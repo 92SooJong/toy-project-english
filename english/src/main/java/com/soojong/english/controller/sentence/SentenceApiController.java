@@ -1,4 +1,4 @@
-package com.soojong.english.sentence.controller;
+package com.soojong.english.controller.sentence;
 
 
 import javax.validation.Valid;
@@ -7,11 +7,11 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.soojong.english.sentence.dto.SentenceCreateRequestDTO;
-import com.soojong.english.sentence.service.SentenceService;
-import com.soojong.english.sentence.vo.SentenceRegistrationRequestVO;
+import com.soojong.english.dto.sentence.SentenceCreateRequestDTO;
+import com.soojong.english.entity.SentenceEntity;
+import com.soojong.english.service.sentence.SentenceService;
+import com.soojong.english.vo.sentence.SentenceRegistrationRequestVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,6 +32,12 @@ public class SentenceApiController {
             .build();
 
         return sentenceService.addSentence(registrationRequestVO);
+    }
+
+    @GetMapping("/sentence/api/v1/random")
+    public SentenceEntity getRandomSentence() {
+        // TODO - DTO로 반환해야함!!
+        return sentenceService.getRandomSentence();
     }
 
 

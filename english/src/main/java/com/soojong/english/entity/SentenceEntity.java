@@ -1,4 +1,4 @@
-package com.soojong.english.sentence.entity;
+package com.soojong.english.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,6 +25,9 @@ public class SentenceEntity extends BaseTimeAuditingEntity {
     private String koreanSentence;
 
     private String englishSentence;
+
+
+
 
 
 }

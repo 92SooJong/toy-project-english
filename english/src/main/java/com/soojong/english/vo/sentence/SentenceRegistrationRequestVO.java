@@ -1,4 +1,4 @@
-package com.soojong.english.sentence.vo;
+package com.soojong.english.vo.sentence;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,8 +1,9 @@
-package com.soojong.english.sentence.service;
+package com.soojong.english.service.sentence;
 
 import org.springframework.stereotype.Service;
-import com.soojong.english.sentence.repository.SentenceRepository;
-import com.soojong.english.sentence.vo.SentenceRegistrationRequestVO;
+import com.soojong.english.entity.SentenceEntity;
+import com.soojong.english.repository.SentenceRepository;
+import com.soojong.english.vo.sentence.SentenceRegistrationRequestVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,6 +17,12 @@ public class SentenceService {
     public Long addSentence(SentenceRegistrationRequestVO sentenceRegistrationRequestVO) {
 
         return sentenceRepository.createSentence(sentenceRegistrationRequestVO);
+    }
+
+    public SentenceEntity getRandomSentence() {
+        // TODO - VO로 반환해야함!!
+
+        return sentenceRepository.getRandomSentence();
     }
 
 

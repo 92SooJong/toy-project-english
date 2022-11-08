@@ -1,4 +1,4 @@
-package com.soojong.english.sentence.controller;
+package com.soojong.english.controller.sentence;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
