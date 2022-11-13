@@ -2,6 +2,7 @@ package com.soojong.web.controller.api.sentence.dto;
 
 import javax.validation.constraints.NotBlank;
 
+import com.soojong.web.vo.sentence.SentenceRegistrationRequestVO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,5 +20,20 @@ public class SentenceCreateRequestDTO {
 
     @NotBlank(message = "Please Insert Korean Sentence")
     private String koreanSentence;
+
+    @NotBlank(message = "Please Insert User Id")
+    private String userId;
+
+    public SentenceRegistrationRequestVO toSentenceRegistrationRequestVO() {
+
+        return SentenceRegistrationRequestVO.builder()
+            .englishSentence(this.englishSentence)
+            .koreanSentence(this.koreanSentence)
+            .userId(this.userId)
+            .build();
+
+    }
+
+
 
 }

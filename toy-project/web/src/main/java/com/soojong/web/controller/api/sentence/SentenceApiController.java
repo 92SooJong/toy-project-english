@@ -27,12 +27,9 @@ public class SentenceApiController {
     @PostMapping("/sentence/api/v1")
     public Long addSentence(@Valid @RequestBody SentenceCreateRequestDTO dto) {
 
-        SentenceRegistrationRequestVO registrationRequestVO = SentenceRegistrationRequestVO.builder()
-            .koreanSentence(dto.getKoreanSentence())
-            .englishSentence(dto.getEnglishSentence())
-            .build();
+        SentenceRegistrationRequestVO sentenceRegistrationRequestVO = dto.toSentenceRegistrationRequestVO();
 
-        return sentenceService.addSentence(registrationRequestVO);
+        return sentenceService.addSentence(sentenceRegistrationRequestVO);
     }
 
     @GetMapping("/sentence/api/v1/random")

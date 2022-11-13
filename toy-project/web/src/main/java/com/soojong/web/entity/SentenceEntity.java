@@ -25,6 +25,9 @@ public class SentenceEntity extends BaseTimeAuditingEntity {
 
     private String englishSentence;
 
+    private String userId;
+
+
 
 
 

@@ -9,5 +9,6 @@ public class SentenceRegistrationRequestVO {
 
     private String englishSentence;
     private String koreanSentence;
+    private String userId;
 
 }
