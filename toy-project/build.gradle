@@ -1,26 +1,22 @@
 plugins {
-	id 'org.springframework.boot' version '2.7.5'
+
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'java'
 }
 
-group = 'com.soojong'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+subprojects {
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
+	apply plugin: 'java'
+
+	repositories {
+		mavenCentral()
 	}
-}
 
-repositories {
-	mavenCentral()
-}
+	dependencies {
 
-dependencies {
+		compileOnly 'org.projectlombok:lombok:1.18.24'
+		annotationProcessor 'org.projectlombok:lombok:1.18.24'
+	}
 
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
 
 }
