@@ -3,6 +3,7 @@ const sentenceInput = {
         const data = {
             englishSentence: $('#english-sentence').val(),
             koreanSentence: $('#korean-sentence').val(),
+            userId : $('#user-id').val(),
         };
 
         $.ajax({
