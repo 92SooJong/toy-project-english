@@ -1,7 +1,11 @@
 package com.soojong.web.repository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 import com.soojong.web.entity.SentenceEntity;
 import com.soojong.web.repository.jpa.SentenceJpaRepository;
@@ -38,11 +42,22 @@ public class SentenceRepository {
             .englishSentence(sentenceEntity.getEnglishSentence())
             .koreanSentence(sentenceEntity.getKoreanSentence())
             .build();
+    }
 
+    public List<SentenceVO> getSentenceList(Pageable pageable) {
 
-
+        Pageable paging = PageRequest.of(2, 10);
+        List<SentenceEntity> entityList = sentenceJpaRepository.findAll(paging).toList();
+        return entityList.stream()
+            .map( entity -> SentenceVO.builder()
+                .id(entity.getId())
+                .englishSentence(entity.getEnglishSentence())
+                .koreanSentence(entity.getKoreanSentence())
+                .build()
+            ).collect(Collectors.toList());
 
     }
+
 
 
 

@@ -1,5 +1,6 @@
 package com.soojong.web.service.sentence;
 
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import com.soojong.web.repository.SentenceRepository;
 import com.soojong.web.vo.sentence.SentenceRegistrationRequestVO;
@@ -23,8 +24,5 @@ public class SentenceService {
 
         return sentenceRepository.getRandomSentence();
     }
-
-
-
 
 }
